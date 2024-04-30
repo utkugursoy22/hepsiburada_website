@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Arama Sonuçları</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+        
+        </div>
+        <div class="main-content">
+            <div class="delivery-filter-container">
+                <div class="checkbox-container">
+                    <select id="city-select">
+                        <option value="">Şehir Seçiniz</option>
+                        <option value="İzmir">İzmir</option>
+                        <option value="İstanbul">İstanbul</option>
+                        <option value="Ankara">Ankara</option>
+                        <option value="Isparta">Isparta</option>
+                        <option value="Eskişehir">Eskişehir</option>
+                        <option value="Antalya">Antalya</option>
+                        <option value="Denizli">Denizli</option>
+                        <option value="Balıkesir">Balıkesir</option>
+                        <option value="Konya">Konya</option>
+                        <option value="Kütahya">Kütahya</option>
+                    </select>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="tomorrow-delivery-checkbox">
+                    <label for="tomorrow-delivery-checkbox">Yarın Kapımda</label>
+                </div>
+            </div>   <div id="search-results">
+           
+            </div>
+        </div>
+    </div>
+
+    <script src="search.js"></script>
+</body>
+</html>

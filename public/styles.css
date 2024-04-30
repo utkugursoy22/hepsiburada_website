@@ -1,0 +1,261 @@
+.header-container {
+    width: 1519.2px;
+    height: 114.65px;
+    background-color: #FFFFFF;
+    position: relative; 
+}
+
+.logo-container {
+    position: absolute; 
+    top: 8px; 
+    left: 20px; 
+
+}
+
+.logo-container img {
+    width: 150px; 
+    height: 108px; 
+    padding: 8px 0 0; 
+    margin-top: -50px;
+}
+
+.color-bar-container {
+    display: flex;
+    position: absolute;
+    bottom: 0; 
+    width: 100%;
+}
+
+.color-bar {
+    height: 8px;
+    flex-grow: 1; 
+}
+
+.orange-bar { background-color: #FF6000; }
+.sky-blue-bar { background-color: #49C7ED; }
+.purple-bar { background-color: #7723DB; }
+.green-bar { background-color: #57B900; }
+.dark-purple-bar { background-color: #5D196A; }
+
+.menu-bar {
+    width: 100%;
+    background-color: #FFFFFF; 
+    display: flex;
+    justify-content: center; 
+    border-top: 1px solid #E0E0E0; 
+    border-bottom: 1px solid #E0E0E0; 
+}
+
+.menu-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px; 
+    color: #646464;
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-decoration: none; 
+    padding: 0 10px; 
+    border-right: 1px solid #E0E0E0; 
+}
+
+.menu-item:last-child {
+    border-right: none; 
+}
+
+.campaign-container {
+    width: 100%;
+    background-color:  #FFA500;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.campaign-item {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px; 
+    color: #FFFFFF; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.campaign-item:hover, .campaign-item.active {
+    background-color: #FFFFFF; 
+    color: #000000; 
+}
+
+.campaign-display {
+    width: 100%;
+    height: 378px; 
+    position: relative;
+    background-color: #000; 
+}
+
+.campaign-display img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+
+.campaign-text-overlay {
+    position: absolute;
+    bottom: 140px; 
+    left: 25%;
+    transform: translateX(-50%); 
+    background-color: #FFFFFF; 
+    color: #484848; 
+    padding: 15px 30px; 
+    border-radius: 15px;
+    font-size: 20px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+
+.search-container {
+    display: flex;
+    align-items: center; 
+    margin-left: 400px;
+}
+
+#search-box {
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px; 
+}
+
+.search-container button {
+    padding: 5px 10px;
+    background-color: #5D196A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+} 
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #f8f8f8;
+    padding: 20px;
+    height: 100vh; 
+}
+
+.main-content {
+    width: 80%;
+    padding: 20px;
+}
+
+.product-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+.product-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+
+.category-item:hover {
+    background-color: #f0f0f0;
+}
+
+.delivery-filter-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.checkbox-container {
+    background-color: orange; 
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.checkbox-container + .checkbox-container {
+    background-color: gray; 
+}
+
+.checkbox-container select {
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.product-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+}
+
+.product-image img {
+    max-width: 300%; 
+   margin-top: -50px;
+    height: auto; 
+    max-height: 800px; 
+   
+    object-fit: cover;
+    margin-right: 20px; 
+    float: right 
+    
+}
+
+
+.product-info {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+
+.product-color {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+.product-detail-container {
+    background-color: #f0f0f0;
+    border-radius: 30px;
+    padding: 20px;
+    width: 70%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#product-price-label,
+#product-color-label {
+    font-size: 20px; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+}
+
+#product-price {
+    margin-top: -10px; 
+}

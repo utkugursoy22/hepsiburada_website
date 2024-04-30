@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Home Screen</title>
+</head>
+<body>
+    <div class="header-container">
+        <div class="logo-container">
+            <a href="/" class="logo-link">
+                <img src="images/logo.jpg" alt="Logo">
+            </a>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="search-box" placeholder="Ürünlerde ara..." aria-label="Search through site content">
+            <button onclick="performSearch()">Ara</button>
+        </div>
+
+        <div class="color-bar-container">
+            <div class="color-bar orange-bar"></div>
+            <div class="color-bar sky-blue-bar"></div>
+            <div class="color-bar purple-bar"></div>
+            <div class="color-bar green-bar"></div>
+            <div class="color-bar dark-purple-bar"></div>
+        </div>
+    </div>
+
+    <div class="menu-bar">
+        <a href="#" class="menu-item" onclick="redirectToCategory('Elektronik')" style="width: 108.2px;">Elektronik</a>
+        <a href="#" class="menu-item" onclick="redirectToCategory('Moda')" style="width: 79px;">Moda</a>
+        <a href="#" class="menu-item" onclick="redirectToCategory('Ev, Yaşam, Kırtasiye, Ofis')" style="width: 159.21px;">Ev, Yaşam, Kırtasiye, Ofis</a>
+        <a href="#" class="menu-item" onclick="redirectToCategory('Oto, Bahçe, Yapı, Market')" style="width: 152px;">Oto, Bahçe, Yapı, Market</a>
+        <a href="#" class="menu-item" onclick="redirectToCategory('Anne, Bebek, Oyuncak')" style="width: 147px;">Anne, Bebek, Oyuncak</a>
+        <a href="#" class="menu-item" onclick="redirectToCategory('Spor, Outdoor')" style="width: 104px;">Spor, Outdoor</a>
+        <a href="#" class="menu-item" onclick="redirectToCategory('Kozmetik, Kişisel Bakım')" style="width: 154px;">Kozmetik, Kişisel Bakım</a>
+        <a href="#" class="menu-item" onclick="redirectToCategory('Süpermarket, Petshop')" style="width: 149px;">Süpermarket, Petshop</a>
+        <a href="#" class="menu-item" onclick="redirectToCategory('Kitap, Film, Müzik, Hobi')" style="width: 150px;">Kitap, Film, Müzik, Hobi</a>
+    </div>
+
+    <div class="campaign-container">
+        <a href="#" class="campaign-item">Tekno İndirim</a>
+        <a href="#" class="campaign-item">Oyuncak İnişte</a>
+        <a href="#" class="campaign-item">Gamer Fırsatı</a>
+        <a href="#" class="campaign-item">Kot İndirim</a>
+        <a href="#" class="campaign-item">Çiko Çiko</a>
+    </div>
+    <div class="campaign-display">
+        <img id="campaign-image" src="" alt="Campaign Image">
+        <div id="campaign-text" class="campaign-text-overlay"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var campaignItems = document.querySelectorAll('.campaign-item');
+            campaignItems.forEach(function(item, index) {
+                item.addEventListener('click', function() {
+                    campaignItems.forEach(innerItem => innerItem.classList.remove('active'));
+                    item.classList.add('active');
+                    loadCampaignData(index + 1);
+                });
+            });
+
+            if (campaignItems.length > 0) {
+                campaignItems[0].classList.add('active');
+                loadCampaignData(1);
+            }
+        });
+
+        function loadCampaignData(campaignId) {
+            fetch(`/api/campaign/${campaignId}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById('campaign-image').src = data.image_url;
+                    document.getElementById('campaign-text').textContent = data.text;
+                })
+                .catch(error => console.error('Error loading the campaign data:', error));
+        }
+
+        function performSearch() {
+            var searchText = document.getElementById('search-box').value;
+            window.location.href = '/search-results.html?query=' + encodeURIComponent(searchText);
+        }
+
+        function redirectToCategory(category) {
+            window.location.href = '/search-results.html?category=' + encodeURIComponent(category);
+        }
+    </script>
+
+</body>
+</html>
